@@ -7,6 +7,12 @@ A comprehensive web portal for managing Durga Puja club memberships, automating 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-cyan)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+## 🚀 Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Sekhar03/anjali)
+
+**Live Demo**: Coming soon on Vercel
+
 ## 📋 Table of Contents
 
 - [Features](#features)
@@ -334,20 +340,24 @@ firebase deploy --only hosting
 
 ## 🚀 Deployment
 
-### Production Checklist
+### Option 1: Deploy to Vercel (Recommended - Easiest)
 
-- [ ] Update Firebase to production mode
-- [ ] Switch to Razorpay live keys
-- [ ] Configure custom domain
-- [ ] Enable Firebase Hosting SSL
-- [ ] Set up monitoring and alerts
-- [ ] Configure backup strategy
-- [ ] Update email templates with production URLs
-- [ ] Test all payment flows
-- [ ] Test automated reminders
-- [ ] Set up error logging
+**One-Click Deploy:**
 
-### Deploy Commands
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Sekhar03/anjali)
+
+**Manual Deploy:**
+
+1. Push your code to GitHub
+2. Go to [Vercel Dashboard](https://vercel.com/dashboard)
+3. Click "Add New Project"
+4. Import your GitHub repository
+5. Add environment variables (Firebase config)
+6. Click "Deploy"
+
+**See detailed guide**: [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)
+
+### Option 2: Deploy to Firebase Hosting
 
 ```bash
 # Build for production
@@ -361,6 +371,20 @@ firebase deploy --only hosting
 firebase deploy --only functions
 firebase deploy --only firestore
 ```
+
+### Production Checklist
+
+- [ ] Update Firebase to production mode
+- [ ] Switch to Razorpay live keys
+- [ ] Configure custom domain
+- [ ] Enable SSL (automatic on Vercel/Firebase)
+- [ ] Set up monitoring and alerts
+- [ ] Configure backup strategy
+- [ ] Update email templates with production URLs
+- [ ] Test all payment flows
+- [ ] Test automated reminders
+- [ ] Set up error logging
+- [ ] Add environment variables to hosting platform
 
 ## 📊 Firebase Functions
 
