@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Members collection - Read public, Write admin only
+    match /members/{memberId} {
+      // Allow anyone to create a new member (for registration)
+      allow create: if true;
+      
+      // Allow authenticated users (admin) to read, update, and delete
+      allow read, update, delete: if request.auth != null;
+    }
+    
+    // Payments collection - Create public, Read/Update/Delete admin only
+    match /payments/{paymentId} {
+      // Allow anyone to create a payment record
+      allow create: if true;
+      
+      // Allow authenticated users (admin) to read, update, and delete
+      allow read, update, delete: if request.auth != null;
+    }
+    
+    // Email logs - Admin only
+    match /emailLogs/{logId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
